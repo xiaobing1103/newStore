@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网抑云音乐</title>
+    <link rel="stylesheet" href="./font_4386221_x6ma0mgfhxp/iconfont.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <script src="./data.js"></script>
+  <body>
+    <header class="headerBox">
+      <div class="logoBox">
+        <div class="logoBox_logo"></div>
+        <div class="logoBox_title">网抑云音乐</div>
+      </div>
+      <div class="tabBox">
+        <ul id="tabList" class="tabList"></ul>
+      </div>
+      <div class="searchBox">
+        <i class="iconfont icon-icon-test12"></i>
+        <input
+          class="searchBox_input"
+          type="text"
+          placeholder="音乐/视频/电台/用户"
+        />
+      </div>
+      <div class="loginBox" id="loginBox">
+        <!-- Use this button to open the modal -->
+        <button onclick="openModal()">登陆</button>
+      </div>
+    </header>
+    <div id="selectedBorder" class="selectedBorder"></div>
+
+    <div class="wrapBox">
+      <div class="wrap">
+        <ul id="wrap-ul">
+          <li class="b1">
+            <img src="./image/109951169205536352.jpg" alt="" />
+          </li>
+          <li class="b1">
+            <img src="./image/109951169205557404.jpg" alt="" />
+          </li>
+          <li class="cc">
+            <img src="./image/109951169205569634.jpg" alt="" />
+          </li>
+          <li class="b1">
+            <img src="./image/109951169205580103.jpg" alt="" />
+          </li>
+          <li class="b1">
+            <img src="./image/109951169205583093.jpg " alt="" />
+          </li>
+          <li class="b1">
+            <img src="./image/109951169208564764.jpg " alt="" />
+          </li>
+        </ul>
+        <span id="toleft1">&lt;</span>
+        <span id="right-btn1">&gt;</span>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal_header">
+          <div class="modal_header_box">登陆</div>
+
+          <span class="close">&times;</span>
+        </div>
+        <section class="modal_main">
+          <div class="modal_main_leftbox">
+            <img
+              src="https://p5.music.126.net/obj/wo3DlcOGw6DClTvDisK1/9643571155/525c/faac/2dc6/fe695c03c7c358ddaa4651736b26a55f.png"
+            />
+          </div>
+          <div class="modal_main_right">
+            <div>扫码登陆</div>
+            <div></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      const tabDom = document.getElementById("tabList");
+      const tabListItems = tabDom.getElementsByClassName("tabList_items");
+      tabList.forEach((tab, index) => {
+        const li = document.createElement("li");
+        li.className = "tabList_items";
+        li.textContent = tab.title;
+        tabDom.appendChild(li);
+        tab.show && li.classList.add("active");
+      });
+      Array.from(tabListItems).forEach((value, i) => {
+        value.addEventListener("click", () => {
+          removeTab();
+          Array.from(tabListItems).forEach((otherLi, index) => {
+            otherLi.classList.remove("active");
+            tabList[index].show = false;
+          });
+          value.classList.add("active");
+          tabList[i].show = true;
+          tabList[i].show && changeTab();
+        });
+      });
+
+      changeTab();
+      function changeTab() {
+        const selectedBorder = document.getElementById("selectedBorder");
+        tabList.forEach((items) => {
+          if (items.children && items.show) {
+            items.children.forEach((value) => {
+              const li = document.createElement("li");
+              li.className = "selectedBorder_List";
+              li.textContent = value.title;
+              selectedBorder.appendChild(li);
+            });
+          }
+        });
+      }
+      function removeTab() {
+        const selectedBorder = document.getElementById("selectedBorder");
+        selectedBorder.innerHTML = "";
+      }
+      // 登陆逻辑
+      const loginDom = document.getElementById("loginBox");
+      loginDom.addEventListener("click", () => {});
+      // 获取元素
+      const modal = document.getElementById("myModal");
+      const span = document.getElementsByClassName("close")[0];
+      // 打开模态框的函数
+      function openModal() {
+        modal.style.display = "block";
+      }
+      // 关闭模态框的函数
+      function closeModal() {
+        modal.style.display = "none";
+      }
+      // 点击 <span> (x), 关闭模态框
+      span.onclick = function () {
+        closeModal();
+      };
+      // 点击模态框外部时，也关闭它
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+    </script>
+
+    <script>
+      window.onload = () => {
+        var lb = document.querySelector("#toleft1");
+        var rb = document.querySelector("#right-btn1");
+        var ul = document.querySelector("#wrap-ul");
+        var lis = ul.getElementsByTagName("li");
+        var classes = ["b1", "b1", "cc", "b1", "b1", "b1"];
+        // 加多少个图片 这里加多少个b1 同时body里加多少个<li class="b1"><img src="地址" alt=""></li>
+        // var classes = ["b1", "b1", "cc", "b1", "b1", "b1", "b1", "b1", "b1"]
+        function toright() {
+          var last_class = classes.pop();
+          classes.unshift(last_class);
+          for (var i = 0; i < lis.length; i++) {
+            lis[i].className = classes[i]; //因为cl发生了变化 所以lis[i]的classname也要跟着变
+          }
+        }
+        function toleft1() {
+          var first_class = classes.shift();
+          classes.push(first_class);
+
+          for (var i = 0; i < lis.length; i++) {
+            lis[i].className = classes[i]; //因为classes发生了变化 所以lis[i]的className也要跟着变
+          }
+        }
+        rb.onclick = toright;
+        lb.onclick = toleft1;
+        // 定时器
+        timer = setInterval(toright, 2000);
+        // 鼠标进来暂停 清除定时器
+        ul.onmouseenter = function () {
+          clearInterval(timer);
+          timer = null;
+        };
+        // 鼠标出去 重开定时器
+        ul.onmouseleave = () => {
+          timer = setInterval(toright, 2000);
+        };
+      };
+    </script>
+  </body>
+</html>
