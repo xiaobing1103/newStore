@@ -2,7 +2,7 @@
   background-color: rgb(36, 36, 36);
   width: 100%;
   height: 70px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   z-index: 1000;
   display: flex;
   justify-content: space-around;
@@ -28,7 +28,8 @@
   line-height: 70px;
 }
 
-.tabBox {}
+.tabBox {
+}
 
 .tabList {
   display: flex;
@@ -87,7 +88,6 @@
   align-items: center;
 }
 
-
 .selectedBorder {
   width: 100%;
   height: 35px;
@@ -131,7 +131,7 @@
 }
 
 .wrap {
-  width: 730px;
+  width: 1000px;
   height: 284px;
   margin: 0px auto;
   perspective: 500px;
@@ -139,7 +139,7 @@
 }
 
 #wrap-ul {
-  width: 730px;
+  width: 1000px;
   height: 284px;
   list-style: none;
   position: relative;
@@ -149,7 +149,7 @@
   /* border-radius: 15%; 
             这里可以修改图片的大小，最好改的时候把ul和li的一并改为相同的*/
   transition: all 1s ease 0s;
-  width: 730px;
+  width: 1000px;
   height: 284px;
   display: inline-block;
   opacity: 0;
@@ -160,7 +160,7 @@
 }
 
 #wrap-ul li {
-  width: 730px;
+  width: 1000px;
   height: 284px;
   position: absolute;
   left: 0;
@@ -241,7 +241,6 @@
   display: flex;
   margin: 50px 0;
   justify-content: space-evenly;
-
 }
 
 .modal_main_leftbox img {
@@ -304,7 +303,7 @@
 }
 
 .base_button_small {
-  background-color: #1795bb;
+  background-color: #409eff;
   border-radius: 12px;
   border: none;
   color: white;
@@ -322,12 +321,12 @@
 
 .base_button_small:hover {
   background-color: #fff;
-  color: #1795bb;
+  color: #409eff;
   border: 1px solid #ccc;
 }
 
 .base_button {
-  background-color: #1795bb;
+  background-color: #409eff;
   border-radius: 12px;
   border: none;
   color: white;
@@ -345,7 +344,7 @@
 
 .base_button:hover {
   background-color: #fff;
-  color: #1795bb;
+  color: #409eff;
   border: 1px solid #ccc;
 }
 
@@ -360,11 +359,11 @@
 }
 
 .user_name {
-    position: relative;
-    margin: 30px 0;
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  margin: 30px 0;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #userName {
@@ -374,8 +373,11 @@
   color: #000000;
   font-size: 20px;
   border: 0px transparent;
-  border-bottom: 2px solid #fff;
-  background-color: rgba(54, 54, 54,0.5);
+  border-bottom: 2px solid #409eff;
+  background-color: #fff;
+  text-indent: 10px;
+  border-radius: 4px;
+  border: 1px solid #eee;
 }
 
 #userName1 {
@@ -385,66 +387,191 @@
   color: #000000;
   font-size: 20px;
   border: 0px transparent;
-  border-bottom: 2px solid #fff;
-  background-color: rgba(54, 54, 54,0.5);
-
+  border-bottom: 2px solid #409eff;
+  background-color: #fff;
+  text-indent: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
 }
 
-#userName:focus{
-    outline: none;
-    border-bottom: 2px solid #1795bb;
-    
+#userName:focus {
+  outline: none;
+  border-bottom: 2px solid #409eff;
 }
 
-#userName1:focus{
-    outline: none;
-    border-bottom: 2px solid #1795bb;
+#userName1:focus {
+  outline: none;
+  border-bottom: 2px solid #409eff;
 }
 
 .userNameTip {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 16px;
-    color: #fff;
+  position: absolute;
+  top: 27%;
+  left: 0px;
+  font-size: 16px;
+  color: #606266;
+  text-indent: 10px;
+  white-space: nowrap;
 }
 
 .userNameTip1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 16px;
-    color: #fff;
-
+  position: absolute;
+  top: 27%;
+  white-space: nowrap;
+  left: 0px;
+  font-size: 16px;
+  color: #606266;
+  text-indent: 10px;
 }
 
 @keyframes user {
-    from{
-        top: 0px;
-        font-size: 20px;
-    }
-    to{
-        top: -20px;
-        font-size: 12px;
-        color: #1795bb;
-    }
+  from {
+    top: 0px;
+    font-size: 20px;
+  }
+  to {
+    top: -20px;
+    font-size: 12px;
+    color: #1795bb;
+  }
 }
-.userNameTipA{
-    animation: user 0.3s linear normal forwards;
-    animation-iteration-count: 1;
+.userNameTipA {
+  animation: user 0.3s linear normal forwards;
+  animation-iteration-count: 1;
 }
 
-.user_name_tips,.user_name_password{
+.user_name_tips,
+.user_name_password {
+  text-indent: 10px;
   color: red;
   display: none;
+  font-size: 10px;
 }
-.user_image{
+.user_image {
   color: #fff;
   display: flex;
   align-items: center;
   display: none;
   cursor: pointer;
 }
-.user_image .user_icon{
+.user_image .user_icon {
   font-size: 30px;
+}
+.newsBox {
+  width: 1000px;
+  height: 284px;
+  padding: 20px 20px 40px;
+  box-sizing: border-box;
+  margin: 0px auto;
+  perspective: 500px;
+  position: relative;
+}
+.newsBox_header {
+  display: flex;
+  align-items: center;
+  height: 33px;
+  padding: 0 10px 0 34px;
+  background-position: -225px -156px;
+  border-bottom: 2px solid #c10d0c;
+  background: url(../image/index.png) no-repeat -226px -155px;
+}
+.newsBox_header_article {
+  float: left;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 28px;
+}
+
+.newsBox_header_spans {
+  float: left;
+  /* margin: 7px 0 0 20px; */
+  margin: 0 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.newsBox_header_spans:hover {
+  color: #666;
+}
+.line {
+  color: #ccc;
+}
+.newsBox_main {
+  margin: 20px 0 0 -42px;
+}
+.newsBox_main_li {
+  width: 140px;
+  height: 204px;
+  padding-left: 42px;
+  float: left;
+  display: inline-block;
+  width: 140px;
+  height: 188px;
+  overflow: hidden;
+  padding: 0 0 30px 50px;
+  line-height: 1.4;
+}
+.u-cover {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  display: block;
+}
+.newsBox_main_li_img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.newsBox_main_li_img_a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.newsBox_main_li_img_bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 27px;
+  color: #ccc;
+  background: url(../image/coverall.png) no-repeat;
+  background-position: 0 -537px;
+}
+.icon-play {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  width: 16px;
+  height: 17px;
+  background-position: 0 0;
+  background: url(../image/iconall.png) no-repeat;
+}
+.icon_headset {
+  float: left;
+  width: 14px;
+  height: 11px;
+  margin: 9px 5px 9px 10px;
+  background: url(../image/iconall.png) no-repeat;
+  background-position: 0 -24px;
+}
+.play_num {
+  float: left;
+  font-size: 12px;
+  margin: 7px 0 0 0;
+}
+.mainP {
+  margin: 8px 0 3px;
+  font-size: 14px;
+}
+.mainA {
+  display: inline-block;
+  max-width: 100%;
+  _width: 100%;
+  vertical-align: middle;
+}
+
+.mainA:hover {
+  color: #000;
 }
