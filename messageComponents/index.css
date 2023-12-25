@@ -1,0 +1,13 @@
+.message-box {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    min-width: 200px;
+    transition: 1s all;
+}
+
+.success { background-color: #52c41a; }
+.error { background-color: #ff4d4f; }
+.info { background-color: #1890ff; }

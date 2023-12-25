@@ -1,192 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>网抑云音乐</title>
-    <link rel="stylesheet" href="./font_4386221_x6ma0mgfhxp/iconfont.css" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-  </head>
-  <script src="./data.js"></script>
-  <body>
-    <header class="headerBox">
-      <div class="logoBox">
-        <div class="logoBox_logo"></div>
-        <div class="logoBox_title">网抑云音乐</div>
-      </div>
-      <div class="tabBox">
-        <ul id="tabList" class="tabList"></ul>
-      </div>
-      <div class="searchBox">
-        <i class="iconfont icon-icon-test12"></i>
-        <input
-          class="searchBox_input"
-          type="text"
-          placeholder="音乐/视频/电台/用户"
-        />
-      </div>
-      <div class="loginBox" id="loginBox">
-        <!-- Use this button to open the modal -->
-        <button onclick="openModal()">登陆</button>
-      </div>
-    </header>
-    <div id="selectedBorder" class="selectedBorder"></div>
 
-    <div class="wrapBox">
-      <div class="wrap">
-        <ul id="wrap-ul">
-          <li class="b1">
-            <img src="./image/109951169205536352.jpg" alt="" />
-          </li>
-          <li class="b1">
-            <img src="./image/109951169205557404.jpg" alt="" />
-          </li>
-          <li class="cc">
-            <img src="./image/109951169205569634.jpg" alt="" />
-          </li>
-          <li class="b1">
-            <img src="./image/109951169205580103.jpg" alt="" />
-          </li>
-          <li class="b1">
-            <img src="./image/109951169205583093.jpg " alt="" />
-          </li>
-          <li class="b1">
-            <img src="./image/109951169208564764.jpg " alt="" />
-          </li>
-        </ul>
-        <span id="toleft1">&lt;</span>
-        <span id="right-btn1">&gt;</span>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>网抑云音乐</title>
+  <link rel="stylesheet" href="./font_4386221_x6ma0mgfhxp/iconfont.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./messageComponents/index.css">
+  <link rel="stylesheet" href="./DropdownComponents/index.css">
+</head>
+<script src="./data.js"></script>
+<script src="./messageComponents/index.js"></script>
+<script src="./DropdownComponents/index.js"></script>
+
+<body>
+  <header class="headerBox">
+    <div class="logoBox">
+      <div class="logoBox_logo"></div>
+      <div class="logoBox_title">网抑云音乐</div>
     </div>
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal_header">
-          <div class="modal_header_box">登陆</div>
+    <div class="tabBox">
+      <ul id="tabList" class="tabList"></ul>
+    </div>
+    <div class="searchBox">
+      <i class="iconfont icon-icon-test12"></i>
+      <input class="searchBox_input" type="text" placeholder="音乐/视频/电台/用户" />
+    </div>
+    <div class="loginBox" id="loginBox">
+      <!-- Use this button to open the modal -->
+      <div id="login_button" class="base_button_small" onclick="openModal()">登陆</div>
 
-          <span class="close">&times;</span>
+      <!-- Dropdown Container -->
+      <div class="dropdown-container">
+        <!-- Trigger -->
+        <div id="dropdown-trigger">
+          <div id="user_image" class="user_image">
+            <i class="iconfont icon-icon-test35 user_icon"></i>
+            <span>微信用户</span>
+          </div>
         </div>
-        <section class="modal_main">
-          <div class="modal_main_leftbox">
-            <img
-              src="https://p5.music.126.net/obj/wo3DlcOGw6DClTvDisK1/9643571155/525c/faac/2dc6/fe695c03c7c358ddaa4651736b26a55f.png"
-            />
-          </div>
-          <div class="modal_main_right">
-            <div>扫码登陆</div>
-            <div></div>
-          </div>
-        </section>
+        <!-- Menu -->
+        <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
+          <!-- Items will be added dynamically -->
+        </div>
       </div>
     </div>
+  </header>
+  <div id="selectedBorder" class="selectedBorder"></div>
+  <div class="wrapBox">
+    <div class="wrap">
+      <ul id="wrap-ul">
+        <li class="b1">
+          <img src="./image/109951169205536352.jpg" alt="" />
+        </li>
+        <li class="b1">
+          <img src="./image/109951169205557404.jpg" alt="" />
+        </li>
+        <li class="cc">
+          <img src="./image/109951169205569634.jpg" alt="" />
+        </li>
+        <li class="b1">
+          <img src="./image/109951169205580103.jpg" alt="" />
+        </li>
+        <li class="b1">
+          <img src="./image/109951169205583093.jpg " alt="" />
+        </li>
+        <li class="b1">
+          <img src="./image/109951169208564764.jpg " alt="" />
+        </li>
+      </ul>
+      <span id="toleft1">&lt;</span>
+      <span id="right-btn1">&gt;</span>
+    </div>
+  </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal_header">
+        <div class="modal_header_box">登陆</div>
 
-    <script>
-      const tabDom = document.getElementById("tabList");
-      const tabListItems = tabDom.getElementsByClassName("tabList_items");
-      tabList.forEach((tab, index) => {
-        const li = document.createElement("li");
-        li.className = "tabList_items";
-        li.textContent = tab.title;
-        tabDom.appendChild(li);
-        tab.show && li.classList.add("active");
+        <span class="close">&times;</span>
+      </div>
+      <section id="modal_main_step1" class="modal_main">
+        <div class="modal_main_leftbox">
+          <img
+            src="https://p5.music.126.net/obj/wo3DlcOGw6DClTvDisK1/9643571155/525c/faac/2dc6/fe695c03c7c358ddaa4651736b26a55f.png" />
+        </div>
+        <div class="modal_main_right">
+          <div class="modal_main_right_title">扫码登陆</div>
+          <div class="modal_main_right_imageBox"><img src="./image/下载.png" alt=""></div>
+          <div class="modal_main_right_desc" onclick="changeModalTab()">使用账号密码登录</div>
+        </div>
+
+      </section>
+      <section id="modal_main_step2" class="modal_main2">
+        <div class="modal_main2_login">
+
+          <div class="user_name" id="userNameBox">
+            <label for="userName" class="userNameTip">请输入您的用户名: 默认用户名admin</label>
+            <input type="text" id="userName" oninput="onChangeUsername()">
+            <span class="user_name_tips">用户名错误</span>
+
+          </div>
+
+          <div class="user_name" id="passwordBox">
+            <label for="userName1" class="userNameTip1">请输入您的密码: 默认密码123456</label>
+            <input type="password" id="userName1" oninput="onChangePassword()">
+            <span class="user_name_password">密码错误</span>
+
+          </div>
+          <div class="base_button_small" onclick="submit()">登录</div>
+        </div>
+      </section>
+      <section class="modal_bottom">
+        <div class="base_button_small" id="base_button_small" onclick="returnStep1()">选择其他模式登录</div>
+      </section>
+    </div>
+  </div>
+  <!-- Message Container -->
+  <div id="message-container" style="position:fixed; top: 20px; right: 20px; z-index:1000;"></div>
+
+  <script>
+    const tabDom = document.getElementById("tabList");
+    const tabListItems = tabDom.getElementsByClassName("tabList_items");
+    tabList.forEach((tab, index) => {
+      const li = document.createElement("li");
+      li.className = "tabList_items";
+      li.textContent = tab.title;
+      tabDom.appendChild(li);
+      tab.show && li.classList.add("active");
+    });
+    Array.from(tabListItems).forEach((value, i) => {
+      value.addEventListener("click", () => {
+        removeTab();
+        Array.from(tabListItems).forEach((otherLi, index) => {
+          otherLi.classList.remove("active");
+          tabList[index].show = false;
+        });
+        value.classList.add("active");
+        tabList[i].show = true;
+        tabList[i].show && changeTab();
       });
-      Array.from(tabListItems).forEach((value, i) => {
-        value.addEventListener("click", () => {
-          removeTab();
-          Array.from(tabListItems).forEach((otherLi, index) => {
-            otherLi.classList.remove("active");
-            tabList[index].show = false;
+    });
+
+    changeTab();
+    function changeTab() {
+      const selectedBorder = document.getElementById("selectedBorder");
+      tabList.forEach((items) => {
+        if (items.children && items.show) {
+          items.children.forEach((value) => {
+            const li = document.createElement("li");
+            li.className = "selectedBorder_List";
+            li.textContent = value.title;
+            selectedBorder.appendChild(li);
           });
-          value.classList.add("active");
-          tabList[i].show = true;
-          tabList[i].show && changeTab();
-        });
+        }
       });
+    }
 
-      changeTab();
-      function changeTab() {
-        const selectedBorder = document.getElementById("selectedBorder");
-        tabList.forEach((items) => {
-          if (items.children && items.show) {
-            items.children.forEach((value) => {
-              const li = document.createElement("li");
-              li.className = "selectedBorder_List";
-              li.textContent = value.title;
-              selectedBorder.appendChild(li);
-            });
-          }
-        });
+    function removeTab() {
+      const selectedBorder = document.getElementById("selectedBorder");
+      selectedBorder.innerHTML = "";
+    }
+    // 登陆逻辑
+    const loginDom = document.getElementById("loginBox");
+    loginDom.addEventListener("click", () => { });
+    // 获取元素
+    const modal = document.getElementById("myModal");
+    const span = document.getElementsByClassName("close")[0];
+    // 打开模态框的函数
+    function openModal() {
+      modal.style.display = "block";
+    }
+    // 关闭模态框的函数
+    function closeModal() {
+      modal.style.display = "none";
+    }
+    // 点击 <span> (x), 关闭模态框
+    span.onclick = function () {
+      closeModal();
+    };
+    // 点击模态框外部时，也关闭它
+    // window.onclick = function (event) {
+    //   if (event.target == modal) {
+    //     closeModal();
+    //   }
+    // };
+
+    // 用户名
+    function onChangeUsername() {
+      console.log(33)
+    }
+    // 密码
+    function onChangePassword() {
+      console.log(11)
+    }
+
+    function returnStep1() {
+      const step1 = document.getElementById('modal_main_step1')
+      const step2 = document.getElementById('modal_main_step2')
+      step1.style.display = 'flex'
+      step2.style.display = "none"
+    }
+    function changeModalTab() {
+      const step1 = document.getElementById('modal_main_step1')
+      const step2 = document.getElementById('modal_main_step2')
+      step1.style.display = 'none'
+      step2.style.display = "block"
+    }
+    // 获取userName输入框元素
+    const userName = document.getElementById('userName');
+    const userName1 = document.getElementById('userName1');
+    // 获取userName提示元素
+    const userNameTip = document.querySelector('.userNameTip');
+    const userNameTip1 = document.querySelector('.userNameTip1');
+    // 焦点事件处理
+
+    // 获取登录按钮
+    const login_button = document.getElementById('login_button')
+    // 获取用户box
+    const user_image = document.getElementById('user_image')
+
+    function submit() {
+      const userNameBoxvalue = userName.value
+      const passwordBoxvalue = userName1.value
+      const errorTips = document.getElementsByClassName('user_name_tips')[0]
+      const errorTips1 = document.getElementsByClassName('user_name_password')[0]
+      if (userNameBoxvalue !== 'admin' || passwordBoxvalue !== '123456') {
+        userNameBoxvalue == 'admin' ? errorTips.style.display = 'none' : errorTips.style.display = 'block'
+        passwordBoxvalue == '123456' ? errorTips1.style.display = 'none' : errorTips1.style.display = 'block'
+      } else {
+        if (userNameBoxvalue == 'admin' && passwordBoxvalue == '123456') {
+          message('✌ 登录成功', 'success');
+          modal.style.display = "none";
+          login_button.style.display = 'none'
+          user_image.style.display = 'flex'
+        }
+        errorTips.style.display = 'none'
+        errorTips1.style.display = 'none'
       }
-      function removeTab() {
-        const selectedBorder = document.getElementById("selectedBorder");
-        selectedBorder.innerHTML = "";
+    }
+    userName.addEventListener('focus', function () {
+      userNameTip.classList.add('userNameTipA');
+      console.log("点击了1");
+    });
+    userName1.addEventListener('focus', function () {
+      userNameTip1.classList.add('userNameTipA');
+      console.log("点击了2");
+    });
+    // 失焦事件处理
+    userName.addEventListener('blur', function () {
+      const val = userName.value;
+      if (!val) {
+        userNameTip.classList.remove('userNameTipA');
       }
-      // 登陆逻辑
-      const loginDom = document.getElementById("loginBox");
-      loginDom.addEventListener("click", () => {});
-      // 获取元素
-      const modal = document.getElementById("myModal");
-      const span = document.getElementsByClassName("close")[0];
-      // 打开模态框的函数
-      function openModal() {
-        modal.style.display = "block";
+    });
+    userName1.addEventListener('blur', function () {
+      const val = userName1.value;
+      if (!val) {
+        userNameTip1.classList.remove('userNameTipA');
       }
-      // 关闭模态框的函数
-      function closeModal() {
-        modal.style.display = "none";
+    });
+    const dropdown = new Dropdown('dropdown-trigger', 'dropdown-menu', [
+      { label: '个人中心', onClick: () => console.log('Action clicked') },
+      { label: '账户信息', onClick: () => console.log('Another action clicked') },
+      {
+        label: '注销登录', onClick: () => {
+          login_button.style.display = 'block'
+          user_image.style.display = 'none'
+          const dropdown_menu = document.getElementById('dropdown-menu')
+          dropdown_menu.style.display = 'none'
+          userName.value = ''
+          userName1.value = ''
+          const errorTips = document.getElementsByClassName('user_name_tips')[0]
+          const errorTips1 = document.getElementsByClassName('user_name_password')[0]
+          errorTips.style.display = 'none'
+          errorTips1.style.display = 'none'
+          returnStep1()
+        }
       }
-      // 点击 <span> (x), 关闭模态框
-      span.onclick = function () {
-        closeModal();
+    ]);
+  </script>
+
+  <script>
+    window.onload = () => {
+      var lb = document.querySelector("#toleft1");
+      var rb = document.querySelector("#right-btn1");
+      var ul = document.querySelector("#wrap-ul");
+      var lis = ul.getElementsByTagName("li");
+      var classes = ["b1", "b1", "cc", "b1", "b1", "b1"];
+      // 加多少个图片 这里加多少个b1 同时body里加多少个<li class="b1"><img src="地址" alt=""></li>
+      // var classes = ["b1", "b1", "cc", "b1", "b1", "b1", "b1", "b1", "b1"]
+      function toright() {
+        var last_class = classes.pop();
+        classes.unshift(last_class);
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].className = classes[i]; //因为cl发生了变化 所以lis[i]的classname也要跟着变
+        }
+      }
+      function toleft1() {
+        var first_class = classes.shift();
+        classes.push(first_class);
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].className = classes[i]; //因为classes发生了变化 所以lis[i]的className也要跟着变
+        }
+      }
+      rb.onclick = toright;
+      lb.onclick = toleft1;
+      // 定时器
+      timer = setInterval(toright, 2000);
+      // 鼠标进来暂停 清除定时器
+      ul.onmouseenter = function () {
+        clearInterval(timer);
+        timer = null;
       };
-      // 点击模态框外部时，也关闭它
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          closeModal();
-        }
-      };
-    </script>
-
-    <script>
-      window.onload = () => {
-        var lb = document.querySelector("#toleft1");
-        var rb = document.querySelector("#right-btn1");
-        var ul = document.querySelector("#wrap-ul");
-        var lis = ul.getElementsByTagName("li");
-        var classes = ["b1", "b1", "cc", "b1", "b1", "b1"];
-        // 加多少个图片 这里加多少个b1 同时body里加多少个<li class="b1"><img src="地址" alt=""></li>
-        // var classes = ["b1", "b1", "cc", "b1", "b1", "b1", "b1", "b1", "b1"]
-        function toright() {
-          var last_class = classes.pop();
-          classes.unshift(last_class);
-          for (var i = 0; i < lis.length; i++) {
-            lis[i].className = classes[i]; //因为cl发生了变化 所以lis[i]的classname也要跟着变
-          }
-        }
-        function toleft1() {
-          var first_class = classes.shift();
-          classes.push(first_class);
-
-          for (var i = 0; i < lis.length; i++) {
-            lis[i].className = classes[i]; //因为classes发生了变化 所以lis[i]的className也要跟着变
-          }
-        }
-        rb.onclick = toright;
-        lb.onclick = toleft1;
-        // 定时器
+      // 鼠标出去 重开定时器
+      ul.onmouseleave = () => {
         timer = setInterval(toright, 2000);
-        // 鼠标进来暂停 清除定时器
-        ul.onmouseenter = function () {
-          clearInterval(timer);
-          timer = null;
-        };
-        // 鼠标出去 重开定时器
-        ul.onmouseleave = () => {
-          timer = setInterval(toright, 2000);
-        };
       };
-    </script>
-  </body>
+    };
+  </script>
+</body>
+
 </html>

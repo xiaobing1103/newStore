@@ -8,6 +8,7 @@
   justify-content: space-around;
   position: relative;
 }
+
 .logoBox {
   width: 136px;
 }
@@ -19,6 +20,7 @@
   height: 69px;
   background-position: 0 0;
 }
+
 .logoBox_title {
   color: #fff;
   font-size: large;
@@ -26,8 +28,7 @@
   line-height: 70px;
 }
 
-.tabBox {
-}
+.tabBox {}
 
 .tabList {
   display: flex;
@@ -70,6 +71,7 @@
   top: 1px;
   left: 4px;
 }
+
 .searchBox_input {
   background-color: #fff;
   outline: none;
@@ -85,20 +87,6 @@
   align-items: center;
 }
 
-.loginBox span {
-  color: rgb(78, 78, 78);
-  padding: 10px;
-  cursor: pointer;
-  border: 1px solid rgb(78, 78, 78);
-  border-radius: 10px;
-  transition: 1s all;
-}
-
-.loginBox span:hover {
-  color: rgb(16, 16, 16);
-  background-color: rgb(93, 93, 93);
-  border: 1px solid rgb(103, 102, 102);
-}
 
 .selectedBorder {
   width: 100%;
@@ -111,6 +99,7 @@
   align-items: center;
   color: #fff;
 }
+
 .selectedBorder_List {
   margin: 0 20px;
   outline: 1px;
@@ -118,11 +107,13 @@
   cursor: pointer;
   outline-color: black;
 }
+
 .selectedBorder_List:hover {
   padding: 5px;
   border-radius: 10px;
   background-color: rgba(16, 16, 16, 0.5);
 }
+
 /* 
 .selectedBorder_img {
   width: 0;
@@ -138,6 +129,7 @@
   background-size: 6000px;
   background-position: center center;
 }
+
 .wrap {
   width: 730px;
   height: 284px;
@@ -162,6 +154,7 @@
   display: inline-block;
   opacity: 0;
 }
+
 .cc img {
   opacity: 1;
 }
@@ -201,28 +194,39 @@
 
 /* Modal样式 */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 9999;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
   /* display: flex; */
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
+  /* 15% from the top and centered */
   padding: 0px;
   /* border: 1px solid #888; */
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 40%;
+  /* Could be more or less, depending on screen size */
   border-radius: 10px;
 }
+
 .modal_header {
   display: flex;
   width: 100%;
@@ -232,20 +236,57 @@
   align-items: center;
   border-radius: 10px 10px 0 0;
 }
+
 .modal_main {
   display: flex;
   margin: 50px 0;
+  justify-content: space-evenly;
+
 }
+
 .modal_main_leftbox img {
   width: 125px;
   height: 200px;
 }
+
+.modal_main_right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal_main_right_title {
+  margin: 10px 0;
+}
+
+.modal_main_right_imageBox img {
+  height: 150px;
+  width: 150px;
+}
+
+.modal_main_right_desc {
+  font-size: 12px;
+  color: #7dcdff;
+  cursor: pointer;
+}
+
+.modal_main_right_desc:hover {
+  text-decoration-line: underline;
+}
+
 .modal_header_box {
   font-size: 20px;
   font-weight: 400;
   margin: 10px 0;
   text-indent: 10px;
 }
+
+.modal_bottom {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
 /* The Close Button */
 .close {
   color: #aaa;
@@ -260,4 +301,150 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.base_button_small {
+  background-color: #1795bb;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.base_button_small:hover {
+  background-color: #fff;
+  color: #1795bb;
+  border: 1px solid #ccc;
+}
+
+.base_button {
+  background-color: #1795bb;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.base_button:hover {
+  background-color: #fff;
+  color: #1795bb;
+  border: 1px solid #ccc;
+}
+
+.modal_main2 {
+  display: none;
+}
+
+.modal_main2_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user_name {
+    position: relative;
+    margin: 30px 0;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#userName {
+  display: inline-block;
+  width: 300px;
+  height: 30px;
+  color: #000000;
+  font-size: 20px;
+  border: 0px transparent;
+  border-bottom: 2px solid #fff;
+  background-color: rgba(54, 54, 54,0.5);
+}
+
+#userName1 {
+  display: inline-block;
+  width: 300px;
+  height: 30px;
+  color: #000000;
+  font-size: 20px;
+  border: 0px transparent;
+  border-bottom: 2px solid #fff;
+  background-color: rgba(54, 54, 54,0.5);
+
+}
+
+#userName:focus{
+    outline: none;
+    border-bottom: 2px solid #1795bb;
+    
+}
+
+#userName1:focus{
+    outline: none;
+    border-bottom: 2px solid #1795bb;
+}
+
+.userNameTip {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.userNameTip1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 16px;
+    color: #fff;
+
+}
+
+@keyframes user {
+    from{
+        top: 0px;
+        font-size: 20px;
+    }
+    to{
+        top: -20px;
+        font-size: 12px;
+        color: #1795bb;
+    }
+}
+.userNameTipA{
+    animation: user 0.3s linear normal forwards;
+    animation-iteration-count: 1;
+}
+
+.user_name_tips,.user_name_password{
+  color: red;
+  display: none;
+}
+.user_image{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  display: none;
+  cursor: pointer;
+}
+.user_image .user_icon{
+  font-size: 30px;
 }
