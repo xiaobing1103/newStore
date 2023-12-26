@@ -85,6 +85,10 @@
       <header class="newsBox_header" id="newsBox_header"></header>
       <main class="newsBox_main" id="newsBox_main"></main>
     </section>
+    <section class="n_new" id="n_new">
+      <header class="v_hd2" id="v_hd2"></header>
+      <main class="n_new_main" id="n_new_main"></main>
+    </section>
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
@@ -391,8 +395,121 @@
           });
         }
       });
-    
-      
+
+      // 渲染newSongList
+      const v_hd2 = document.getElementById("v_hd2");
+      const n_new_main = document.getElementById("n_new_main");
+      const n_new_main_inner = document.createElement("div");
+      n_new_main_inner.className = "n_new_main_inner";
+      n_new_main.appendChild(n_new_main_inner);
+
+      const n_news_rightA = document.createElement("a");
+      const n_news_leftA = document.createElement("a");
+      n_news_leftA.className = "n_new_pre";
+      n_news_rightA.className = "n_new_next";
+
+      const n_new_main_inner_div = document.createElement("div");
+      n_new_main_inner_div.className = "n_new_main_inner_div";
+      n_new_main_inner.appendChild(n_new_main_inner_div);
+      v_hd2.className = "v_hd2";
+      n_new_main_inner_div.appendChild(n_news_leftA);
+      newsSongList.forEach((list) => {
+        const v_hd2P = document.createElement("p");
+        v_hd2P.className = "v_hd2P";
+        v_hd2P.textContent = list.title;
+        v_hd2.appendChild(v_hd2P);
+        list.songs.forEach((items) => {
+          const n_new_main_inner_div_ul = document.createElement("div");
+          n_new_main_inner_div_ul.className = "n_new_main_inner_div_ul";
+          items.lunbo.forEach((lunbo) => {
+            const n_new_main_inner_div_ul_li = document.createElement("li");
+            n_new_main_inner_div_ul_li.className = "n_new_main_inner_div_ul_li";
+            const n_new_main_inner_div_ul_li_div =
+              document.createElement("div");
+            n_new_main_inner_div_ul_li_div.className =
+              "n_new_main_inner_div_ul_li_div";
+            const n_new_main_inner_div_ul_li_div_img =
+              document.createElement("img");
+            n_new_main_inner_div_ul_li_div_img.src = lunbo.imgSrc;
+            n_new_main_inner_div_ul_li_div_img.className =
+              "n_new_main_inner_div_ul_li_div_img";
+            const n_new_main_inner_div_ul_li_div_a = document.createElement(
+              "n_new_main_inner_div_ul_li_div_a"
+            );
+            n_new_main_inner_div_ul_li_div_a.className =
+              "n_new_main_inner_div_ul_li_div_a";
+            // 下半部分
+            const n_new_main_inner_div_ul_li_p = document.createElement(
+              "n_new_main_inner_div_ul_li_p"
+            );
+            n_new_main_inner_div_ul_li_p.textContent = lunbo.songsName;
+            n_new_main_inner_div_ul_li_p.className =
+              "n_new_main_inner_div_ul_li_p";
+            const n_new_main_inner_div_ul_li_p2 = document.createElement(
+              "n_new_main_inner_div_ul_li_p"
+            );
+            n_new_main_inner_div_ul_li_p2.textContent = lunbo.article;
+            n_new_main_inner_div_ul_li_p2.className =
+              "n_new_main_inner_div_ul_li_p2";
+            n_new_main_inner_div_ul.appendChild(n_new_main_inner_div_ul_li);
+            n_new_main_inner_div_ul_li.appendChild(
+              n_new_main_inner_div_ul_li_div
+            );
+            n_new_main_inner_div_ul_li_div.appendChild(
+              n_new_main_inner_div_ul_li_div_img
+            );
+            n_new_main_inner_div_ul_li_div.appendChild(
+              n_new_main_inner_div_ul_li_div_a
+            );
+            n_new_main_inner_div_ul_li.appendChild(
+              n_new_main_inner_div_ul_li_p
+            );
+            n_new_main_inner_div_ul_li.appendChild(
+              n_new_main_inner_div_ul_li_p2
+            );
+          });
+          n_new_main_inner_div.appendChild(n_new_main_inner_div_ul);
+        });
+      });
+      n_new_main_inner_div.appendChild(n_news_rightA);
+
+      const n_new_main_inner_div_ulList = document.getElementsByClassName(
+        "n_new_main_inner_div_ul"
+      );
+      let idx = 0;
+
+      n_news_leftA.addEventListener("click", () => {
+        moveSlide(-1);
+      });
+      n_news_rightA.addEventListener("click", () => {
+        moveSlide(1);
+      });
+      // 初始化轮播图位置
+      function initSlides() {
+        n_new_main_inner_div_ulList[0].style =
+          "left: 0px;transition: left 0.5s ease;";
+        n_new_main_inner_div_ulList[1].style =
+          "left: 925px;transition: left 0.5s ease;";
+        n_new_main_inner_div_ulList[2].style =
+          "left:-925px;transition: left 0.5s ease;";
+      }
+      initSlides(); // 初始化轮播图
+      // 移动轮播图
+      function moveSlide(step) {
+        debugger;
+        idx += step;
+        idx = (idx + 3) % 3; // 确保idx始终在0-2之间循环
+        updateSlides();
+      }
+
+      // 更新轮播图位置
+      function updateSlides() {
+        debugger;
+        Array.from(n_new_main_inner_div_ulList).forEach((slide, index) => {
+          debugger;
+          slide.style.left = `${(index - idx) * 925}px`;
+        });
+      }
     </script>
   </body>
 </html>

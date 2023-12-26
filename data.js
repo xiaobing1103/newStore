@@ -174,3 +174,116 @@ const newsBox = [
     ],
   },
 ];
+
+const newsSongList = [
+  {
+    title: "新碟上架",
+    songs: [
+      {
+        title: "轮播图1",
+        lunbo: [
+          {
+            imgSrc:
+              "http://p3.music.126.net/TBKCGkT2deMpO8WtE1BM6Q==/109951169159480228.jpg?param=100y100",
+            songsName: "脏艺术家",
+            article: "MC HotDog 热狗",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/v3mleilKcQwTxt9pKA_uVw==/109951169121732498.jpg?param=100y100",
+            songsName: "成长中心",
+            article: "阿力普",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/Bhxsrj4eKp1-AtdfqSIxcg==/109951169146813114.jpg?param=100y100",
+            songsName: "姿态",
+            article: "傻子与白痴",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/WvjkNRgG4Y8JfezhzfR-Gg==/109951169134864331.jpg?param=100y100",
+            songsName: "盆地",
+            article: "郑兴",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/scRH4g79vVor54JCUpufXQ==/109951169105924092.jpg?param=100y100",
+            songsName: "期待集",
+            article: "许钧",
+          },
+        ],
+      },
+      {
+        title: "轮播图2",
+        lunbo: [
+          {
+            imgSrc:
+              "http://p3.music.126.net/TBKCGkT2deMpO8WtE1BM6Q==/109951169159480228.jpg?param=100y100",
+            songsName: "脏艺术家",
+            article: "MC HotDog 热狗",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/v3mleilKcQwTxt9pKA_uVw==/109951169121732498.jpg?param=100y100",
+            songsName: "成长中心",
+            article: "阿力普",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/Bhxsrj4eKp1-AtdfqSIxcg==/109951169146813114.jpg?param=100y100",
+            songsName: "姿态",
+            article: "傻子与白痴",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/WvjkNRgG4Y8JfezhzfR-Gg==/109951169134864331.jpg?param=100y100",
+            songsName: "盆地",
+            article: "郑兴",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/scRH4g79vVor54JCUpufXQ==/109951169105924092.jpg?param=100y100",
+            songsName: "期待集",
+            article: "许钧",
+          },
+        ],
+      },
+      {
+        title: "轮播图3",
+        lunbo: [
+          {
+            imgSrc:
+              "http://p3.music.126.net/TBKCGkT2deMpO8WtE1BM6Q==/109951169159480228.jpg?param=100y100",
+            songsName: "脏艺术家",
+            article: "MC HotDog 热狗",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/v3mleilKcQwTxt9pKA_uVw==/109951169121732498.jpg?param=100y100",
+            songsName: "成长中心",
+            article: "阿力普",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/Bhxsrj4eKp1-AtdfqSIxcg==/109951169146813114.jpg?param=100y100",
+            songsName: "姿态",
+            article: "傻子与白痴",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/WvjkNRgG4Y8JfezhzfR-Gg==/109951169134864331.jpg?param=100y100",
+            songsName: "盆地",
+            article: "郑兴",
+          },
+          {
+            imgSrc:
+              "http://p3.music.126.net/scRH4g79vVor54JCUpufXQ==/109951169105924092.jpg?param=100y100",
+            songsName: "期待集",
+            article: "许钧",
+          },
+        ],
+      },
+    ],
+  },
+];

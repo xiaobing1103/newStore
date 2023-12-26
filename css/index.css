@@ -459,7 +459,7 @@
 }
 .newsBox {
   width: 1000px;
-  height: 284px;
+  height: 500px;
   padding: 20px 20px 40px;
   box-sizing: border-box;
   margin: 0px auto;
@@ -574,4 +574,129 @@
 
 .mainA:hover {
   color: #000;
+}
+.n_new {
+  width: 1000px;
+  height: 500px;
+  padding: 20px 20px 40px;
+  box-sizing: border-box;
+  margin: 0px auto;
+  perspective: 500px;
+  position: relative;
+}
+
+.v_hd2 {
+  height: 33px;
+  padding: 0 10px 0 34px;
+  background-position: -225px -156px;
+  background: url(../image/index.png) no-repeat -226px -155px;
+  border-bottom: 2px solid #c10d0c;
+}
+.v_hd2P {
+  float: left;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 28px;
+}
+.n_new_main {
+  position: relative;
+  zoom: 1;
+  height: 186px;
+  margin: 20px 0 37px;
+  overflow: hidden;
+  border: 1px solid #d3d3d3;
+}
+
+.n_new_main_inner {
+  height: 184px;
+  padding-left: 16px;
+  background: #f5f5f5;
+  border: 1px solid #fff;
+}
+
+.n_new_main_inner_div {
+  float: left;
+  width: 925px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.n_new_main_inner_div_ul {
+  /* left: 645px;
+  transition: none 0s ease 0s; */
+  position: absolute;
+  top: 0;
+  width: 925px;
+  margin: 28px 0 0 0;
+}
+.n_new_main_inner_div_ul_li {
+  float: left;
+  display: inline;
+  width: 174px;
+  height: 150px;
+  margin-left: 11px;
+  background-position: -260px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.n_new_main_inner_div_ul_li_div {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 7px;
+  position: relative;
+  display: block;
+}
+.n_new_main_inner_div_ul_li_div_img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.n_new_pre {
+  z-index: 1;
+  left: 4px;
+  position: absolute;
+  top: 71px;
+  width: 17px;
+  height: 17px;
+  background: url(../image/index.png) no-repeat 0 9999px;
+  cursor: pointer;
+  background-position: -260px -75px;
+}
+.n_new_next {
+  position: absolute;
+  top: 71px;
+  width: 17px;
+  right: 0;
+  height: 17px;
+  background: url(../image/index.png) no-repeat 0 9999px;
+  cursor: pointer;
+  background-position: -300px -75px;
+}
+.n_new_main_inner_div_ul_li_div_a {
+  width: 118px;
+  height: 100px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../image/coverall.png) no-repeat;
+  text-decoration: none;
+  background-position: 0 -570px;
+  color: #333;
+  cursor: pointer;
+}
+.n_new_main_inner_div_ul_li_p {
+  margin-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.n_new_main_inner_div_ul_li_p2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  line-height: 18px;
 }
